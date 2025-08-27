@@ -227,7 +227,7 @@ namespace Linque01
             //List<int> numbers = new List<int> {  };
             //var result = numbers.SingleOrDefault();
             //Console.WriteLine(result);
-           
+          
            
             #endregion
             #region Aggregate
