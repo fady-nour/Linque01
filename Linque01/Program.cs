@@ -283,7 +283,7 @@ namespace Linque01
             //Console.WriteLine(item);
             //}
             #endregion
-      
+
             #endregion
             #region Element Operators
             #region Q1
@@ -299,11 +299,35 @@ namespace Linque01
             //var result = Arr.Where(p => p>5).ElementAt(1);
             //Console.WriteLine(result);
             #endregion
-
-
-
             #endregion
 
+            #region Aggregate Operators
+            #region Q1
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Count(p => p %2 ==1);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q2
+            //var result = ListGenerator.CustomersList.Select(x => new
+            //{
+            //    CustomerName =x.CustomerName,
+            //    CountOrders=x.Orders?.Count() ??0
+            //});
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q3
+            //var resul = ListGenerator.ProductList.Select(p => new {Catagory=p.Category,
+            //countProduct = p.ProductName.Count()});
+            //foreach (var item in resul) 
+            //{
+
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #endregion
 
 
 

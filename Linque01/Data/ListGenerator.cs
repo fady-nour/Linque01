@@ -10,7 +10,7 @@ namespace Linque01.Data
     internal static class ListGenerator
     {
         public static List<Product> ProductList { get; set; }
-        public static List<Customer> CustomerList { get; set; }
+        public static List<Customer> CustomersList { get; set; }
 
         static ListGenerator()
         {
@@ -174,29 +174,29 @@ namespace Linque01.Data
                         UnitPrice = 13.0000M, UnitsInStock = 32 }
 
             };
-            
-            CustomerList = (from e in XDocument.Load("Customers.xml").Root.Elements("Customer")
-                           select new Customer()
-                           {
-                               CustomerID=(string)e.Element("id"),
-                               CustomerName = (string) e.Element("name"),
-                               Address =(string )e.Element("address"),
-                               City = (string)e.Element("city"),
-                               Region = (string)e.Element("region"),
-                               PostalCode = (string)e.Element("postalcode"),
-                               Country = (string)e.Element("country"),
-                               Phone = (string)e.Element("phone"),
-                               Fax = (string)e.Element("fax"),
-                               Orders = (
+
+
+            CustomersList = (from e in XDocument.Load("Customers.xml").Root.Elements("customer")
+                             select new Customer()
+                             {
+                                 CustomerID = (string)e.Element("id"),
+                                 CustomerName = (string)e.Element("name"),
+                                 Address = (string)e.Element("address"),
+                                 City = (string)e.Element("city"),
+                                 Region = (string)e.Element("region"),
+                                 PostalCode = (string)e.Element("postalcode"),
+                                 Country = (string)e.Element("country"),
+                                 Phone = (string)e.Element("phone"),
+                                 Fax = (string)e.Element("fax"),
+                                 Orders = (
                                       from o in e.Elements("orders").Elements("order")
                                       select new Order
                                       {
                                           OrderID = (int)o.Element("id"),
-                                          OrderDate = (DateTime)o.Element("orderdate"),             
+                                          OrderDate = (DateTime)o.Element("orderdate"),
                                           Total = (decimal)o.Element("total")
-                               }).ToArray()
-
-                           }).ToList();
+                                      }).ToArray()
+                             }).ToList();
 
         }
 
