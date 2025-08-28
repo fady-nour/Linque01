@@ -283,8 +283,26 @@ namespace Linque01
             //Console.WriteLine(item);
             //}
             #endregion
+      
+            #endregion
+            #region Element Operators
+            #region Q1
+            //var result = ListGenerator.ProductList.First(p => p.UnitsInStock==0);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q2
+            //var result = ListGenerator.ProductList.FirstOrDefault(p => p.UnitPrice>1000);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q3
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Where(p => p>5).ElementAt(1);
+            //Console.WriteLine(result);
             #endregion
 
+
+
+            #endregion
 
 
 
