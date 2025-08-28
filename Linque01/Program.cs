@@ -6,6 +6,7 @@ namespace Linque01
     {
         static void Main(string[] args)
         {
+            #region Demo
             #region implicitly type local variable
             #region var 
             //must be intialize 
@@ -221,21 +222,21 @@ namespace Linque01
             //var result = ListGenerator.ProductList.ElementAt(0);
             //var result = ListGenerator.ProductList.ElementAtOrDefault(22);
             //Console.WriteLine(result);
-           // List<int> numbers = new List<int> { 42 };
+            // List<int> numbers = new List<int> { 42 };
             //var result = numbers.Single();
             //Console.WriteLine(result);
             //List<int> numbers = new List<int> {  };
             //var result = numbers.SingleOrDefault();
             //Console.WriteLine(result);
-          
-           
+
+
             #endregion
             #region Aggregate
             //var result = ListGenerator.ProductList.Count();
             //var result = ListGenerator.ProductList.Count(p => p.UnitsInStock==0);
             // Console.WriteLine(result);
-           // var result = ListGenerator.ProductList.Min(p=> p.UnitPrice);
-          //  Console.WriteLine(result);
+            // var result = ListGenerator.ProductList.Min(p=> p.UnitPrice);
+            //  Console.WriteLine(result);
 
             //var re = ListGenerator.ProductList.Max(p=> p.UnitPrice);
             //Console.WriteLine(re);
@@ -246,6 +247,7 @@ namespace Linque01
             //string[] Names = { "Fady", "Abdelnour", "Lotfy" };
             //var result = Names.Aggregate((S1,S2) => $"{S1} {S2}");
             //Console.WriteLine(result);
+            #endregion
             #endregion
             #endregion
         }
