@@ -408,6 +408,57 @@ namespace Linque01
             #endregion
 
             #endregion
+            #region Transformation Operators
+            #region Q1
+            //var result =ListGenerator.ProductList.Select(x => x.ProductName).ToList();
+            //foreach (var item in result) {  Console.WriteLine(item); }
+            #endregion
+            #region Q2
+            //String[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            //var result = words.Select(p => new {Uppercase=p.ToUpper(),
+            //Lowercase=p.ToLower()});
+            //foreach (var word in result) { Console.WriteLine(word); }
+            #endregion
+            #region Q3
+            //var result = ListGenerator.ProductList.Select(p =>
+            //new
+            //{
+            //    Catagory=p.Category,
+            //    Productid=p.ProductID,
+            //    Price=p.UnitPrice
+
+            //});
+            //foreach (var item in result) { Console.WriteLine(item); }
+            #endregion
+            #region Q4
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Select ((value, index) => new { value, Match = (value == index) }) ;
+            //foreach ( var item in result ) { Console.WriteLine($"{item.value} : {item.Match} "); }
+            #endregion
+            #region Q5
+            //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            //int[] numbersB = { 1, 3, 5, 7, 8 };
+            //var result =from p in numbersA
+            //from n in numbersB
+            //where p < n
+            //select new {P=p,N=n};
+            //foreach (var x in result) 
+            //{ Console.WriteLine($"{x.P} is less than {x.N}"); }
+            #endregion
+            #region Q6
+            //var result = ListGenerator.CustomersList.SelectMany(p => p.Orders).Where(p=>p.Total <500);
+            //foreach (var order in result) { Console.WriteLine(order); }
+            #endregion
+            #region Q7
+            //var result = ListGenerator.CustomersList.SelectMany(c => c.Orders)
+            //    .Where(p => p.OrderDate.Date.Year >= 1998);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+            #endregion
 
 
 
