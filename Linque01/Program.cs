@@ -1,4 +1,6 @@
 ﻿using Linque01.Data;
+using System.Runtime.Intrinsics.Arm;
+using System.Threading;
 
 namespace Linque01
 {
@@ -300,7 +302,6 @@ namespace Linque01
             //Console.WriteLine(result);
             #endregion
             #endregion
-
             #region Aggregate Operators
             #region Q1
             //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
@@ -358,7 +359,55 @@ namespace Linque01
             //Console.WriteLine(result);
             #endregion
             #endregion
+            #region Ordering Operators
+            #region Q1
+            //var result =ListGenerator.ProductList.OrderBy(x => x.ProductName);
+            //foreach (var item in result) 
+            //{
+            //Console.WriteLine(item);
+            //}
 
+            #endregion
+            #region Q2
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderBy(p => p ,StringComparer.OrdinalIgnoreCase).ToList();
+            //foreach (String str in result) 
+            //{
+            //Console.WriteLine(str);
+            //}
+            #endregion
+            #region Q3
+            //var result = ListGenerator.ProductList.OrderByDescending
+            //    (p => p.UnitsInStock).ToList ();
+            //foreach (var item in result)
+            //{ Console.WriteLine (item); }
+            #endregion
+            #region Q4
+            //  string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //  var result = Arr.OrderBy(x => x.Length).ThenBy(p => p);
+            //foreach (var x in result) {Console.WriteLine(x); }
+            #endregion
+            #region Q5
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderBy(x => x.Length).ThenBy(p =>StringComparer.OrdinalIgnoreCase);
+            //foreach(var x in result) {Console.WriteLine(x); }
+            #endregion
+            #region Q6
+            //var result =ListGenerator.ProductList.OrderByDescending(x => x.Category).ThenByDescending(p =>p.UnitPrice).ToList();
+            //foreach (var item in result) {Console.WriteLine(item);}
+            #endregion
+            #region Q7
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderByDescending(x => x.Length).ThenByDescending(p=>StringComparer.OrdinalIgnoreCase).ToList();
+            //foreach( var item in result ) {Console.WriteLine(item); }
+            #endregion
+            #region Q8
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var result = Arr.Where(p => p.Length > 1 && p[1]=='i').Reverse();
+            //foreach (var item in result) {Console.WriteLine(item);}
+            #endregion
+
+            #endregion
 
 
 
