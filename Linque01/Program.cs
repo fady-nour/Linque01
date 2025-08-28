@@ -327,6 +327,36 @@ namespace Linque01
             //    Console.WriteLine(item);
             //}
             #endregion
+            #region Q4
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Sum();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q5
+
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //int total =Arr.Sum(x => x.Length);
+            //Console.WriteLine(total);
+
+            #endregion
+            #region Q6
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //var words = Arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result =words.OrderBy(p => p.Length).First();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q7
+            //string[] arr = File.ReadAllLines("dictionary_english.txt");
+            //var word = arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result =word.OrderByDescending(p => p.Length).First();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q8
+            //string[] arr = File.ReadAllLines("dictionary_english.txt");
+            //var word = arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result = word.Average(p => p.Length);
+            //Console.WriteLine(result);
+            #endregion
             #endregion
 
 
