@@ -1,4 +1,6 @@
 ﻿using Linque01.Data;
+using System.Runtime.Intrinsics.Arm;
+using System.Threading;
 
 namespace Linque01
 {
@@ -6,6 +8,7 @@ namespace Linque01
     {
         static void Main(string[] args)
         {
+            #region Demo
             #region implicitly type local variable
             #region var 
             //must be intialize 
@@ -221,21 +224,21 @@ namespace Linque01
             //var result = ListGenerator.ProductList.ElementAt(0);
             //var result = ListGenerator.ProductList.ElementAtOrDefault(22);
             //Console.WriteLine(result);
-           // List<int> numbers = new List<int> { 42 };
+            // List<int> numbers = new List<int> { 42 };
             //var result = numbers.Single();
             //Console.WriteLine(result);
             //List<int> numbers = new List<int> {  };
             //var result = numbers.SingleOrDefault();
             //Console.WriteLine(result);
-          
-           
+
+
             #endregion
             #region Aggregate
             //var result = ListGenerator.ProductList.Count();
             //var result = ListGenerator.ProductList.Count(p => p.UnitsInStock==0);
             // Console.WriteLine(result);
-           // var result = ListGenerator.ProductList.Min(p=> p.UnitPrice);
-          //  Console.WriteLine(result);
+            // var result = ListGenerator.ProductList.Min(p=> p.UnitPrice);
+            //  Console.WriteLine(result);
 
             //var re = ListGenerator.ProductList.Max(p=> p.UnitPrice);
             //Console.WriteLine(re);
@@ -247,6 +250,217 @@ namespace Linque01
             //var result = Names.Aggregate((S1,S2) => $"{S1} {S2}");
             //Console.WriteLine(result);
             #endregion
+            #endregion
+            #endregion
+            #region Assignment 01
+            #region Restriction Operators
+            #region Q1
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0);
+            //result=from p in ListGenerator.ProductList
+            //       where p.UnitsInStock == 0
+            //       select p;
+            //foreach (var unit in result)
+            //{
+            //    Console.WriteLine(unit);
+            //}
+            #endregion
+            #region Q2
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock>0&&p.UnitPrice > 3);
+            //result=from p in ListGenerator.ProductList
+            //       where p.UnitPrice > 3 &&p.UnitsInStock > 0
+            //       select p;
+            //foreach (var unit in result) 
+            //{ 
+            //Console.WriteLine(unit);
+            //}
+
+            #endregion
+            #region Q3
+            //String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            //var result = Arr.Select((name,index) => new {Name =name,Value = index })
+            //.Where(p => p.Name.Length < p.Value);
+            //foreach (var item in result) 
+            //{
+            //Console.WriteLine(item);
+            //}
+            #endregion
+
+            #endregion
+            #region Element Operators
+            #region Q1
+            //var result = ListGenerator.ProductList.First(p => p.UnitsInStock==0);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q2
+            //var result = ListGenerator.ProductList.FirstOrDefault(p => p.UnitPrice>1000);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q3
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Where(p => p>5).ElementAt(1);
+            //Console.WriteLine(result);
+            #endregion
+            #endregion
+            #region Aggregate Operators
+            #region Q1
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Count(p => p %2 ==1);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q2
+            //var result = ListGenerator.CustomersList.Select(x => new
+            //{
+            //    CustomerName =x.CustomerName,
+            //    CountOrders=x.Orders?.Count() ??0
+            //});
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q3
+            //var resul = ListGenerator.ProductList.Select(p => new {Catagory=p.Category,
+            //countProduct = p.ProductName.Count()});
+            //foreach (var item in resul) 
+            //{
+
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q4
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Sum();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q5
+
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //int total =Arr.Sum(x => x.Length);
+            //Console.WriteLine(total);
+
+            #endregion
+            #region Q6
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //var words = Arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result =words.OrderBy(p => p.Length).First();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q7
+            //string[] arr = File.ReadAllLines("dictionary_english.txt");
+            //var word = arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result =word.OrderByDescending(p => p.Length).First();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q8
+            //string[] arr = File.ReadAllLines("dictionary_english.txt");
+            //var word = arr.Where(p => !string.IsNullOrEmpty(p)).ToList();
+            //var result = word.Average(p => p.Length);
+            //Console.WriteLine(result);
+            #endregion
+            #endregion
+            #region Ordering Operators
+            #region Q1
+            //var result =ListGenerator.ProductList.OrderBy(x => x.ProductName);
+            //foreach (var item in result) 
+            //{
+            //Console.WriteLine(item);
+            //}
+
+            #endregion
+            #region Q2
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderBy(p => p ,StringComparer.OrdinalIgnoreCase).ToList();
+            //foreach (String str in result) 
+            //{
+            //Console.WriteLine(str);
+            //}
+            #endregion
+            #region Q3
+            //var result = ListGenerator.ProductList.OrderByDescending
+            //    (p => p.UnitsInStock).ToList ();
+            //foreach (var item in result)
+            //{ Console.WriteLine (item); }
+            #endregion
+            #region Q4
+            //  string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //  var result = Arr.OrderBy(x => x.Length).ThenBy(p => p);
+            //foreach (var x in result) {Console.WriteLine(x); }
+            #endregion
+            #region Q5
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderBy(x => x.Length).ThenBy(p =>StringComparer.OrdinalIgnoreCase);
+            //foreach(var x in result) {Console.WriteLine(x); }
+            #endregion
+            #region Q6
+            //var result =ListGenerator.ProductList.OrderByDescending(x => x.Category).ThenByDescending(p =>p.UnitPrice).ToList();
+            //foreach (var item in result) {Console.WriteLine(item);}
+            #endregion
+            #region Q7
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result =Arr.OrderByDescending(x => x.Length).ThenByDescending(p=>StringComparer.OrdinalIgnoreCase).ToList();
+            //foreach( var item in result ) {Console.WriteLine(item); }
+            #endregion
+            #region Q8
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var result = Arr.Where(p => p.Length > 1 && p[1]=='i').Reverse();
+            //foreach (var item in result) {Console.WriteLine(item);}
+            #endregion
+
+            #endregion
+            #region Transformation Operators
+            #region Q1
+            //var result =ListGenerator.ProductList.Select(x => x.ProductName).ToList();
+            //foreach (var item in result) {  Console.WriteLine(item); }
+            #endregion
+            #region Q2
+            //String[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            //var result = words.Select(p => new {Uppercase=p.ToUpper(),
+            //Lowercase=p.ToLower()});
+            //foreach (var word in result) { Console.WriteLine(word); }
+            #endregion
+            #region Q3
+            //var result = ListGenerator.ProductList.Select(p =>
+            //new
+            //{
+            //    Catagory=p.Category,
+            //    Productid=p.ProductID,
+            //    Price=p.UnitPrice
+
+            //});
+            //foreach (var item in result) { Console.WriteLine(item); }
+            #endregion
+            #region Q4
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result = Arr.Select ((value, index) => new { value, Match = (value == index) }) ;
+            //foreach ( var item in result ) { Console.WriteLine($"{item.value} : {item.Match} "); }
+            #endregion
+            #region Q5
+            //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            //int[] numbersB = { 1, 3, 5, 7, 8 };
+            //var result =from p in numbersA
+            //from n in numbersB
+            //where p < n
+            //select new {P=p,N=n};
+            //foreach (var x in result) 
+            //{ Console.WriteLine($"{x.P} is less than {x.N}"); }
+            #endregion
+            #region Q6
+            //var result = ListGenerator.CustomersList.SelectMany(p => p.Orders).Where(p=>p.Total <500);
+            //foreach (var order in result) { Console.WriteLine(order); }
+            #endregion
+            #region Q7
+            //var result = ListGenerator.CustomersList.SelectMany(c => c.Orders)
+            //    .Where(p => p.OrderDate.Date.Year >= 1998);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+            #endregion
+
+
             #endregion
         }
     }
