@@ -250,6 +250,56 @@ namespace Linque01
             #endregion
             #endregion
             #endregion
+            #region Assignment 01
+            #region Restriction Operators
+            #region Q1
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0);
+            //result=from p in ListGenerator.ProductList
+            //       where p.UnitsInStock == 0
+            //       select p;
+            //foreach (var unit in result)
+            //{
+            //    Console.WriteLine(unit);
+            //}
+            #endregion
+            #region Q2
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock>0&&p.UnitPrice > 3);
+            //result=from p in ListGenerator.ProductList
+            //       where p.UnitPrice > 3 &&p.UnitsInStock > 0
+            //       select p;
+            //foreach (var unit in result) 
+            //{ 
+            //Console.WriteLine(unit);
+            //}
+
+            #endregion
+            #region Q3
+            //String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            //var result = Arr.Select((name,index) => new {Name =name,Value = index })
+            //.Where(p => p.Name.Length < p.Value);
+            //foreach (var item in result) 
+            //{
+            //Console.WriteLine(item);
+            //}
+            #endregion
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #endregion
         }
     }
 }
