@@ -802,7 +802,38 @@ namespace Linque01
             //        }
             #endregion
             #endregion
+            #region Quantifiers
+            #region Q1
+            //var words = File.ReadAllLines("dictionary_english.txt");
+            //bool res = words.Any(w => w.Contains("ei"));
+            //Console.WriteLine(res);
 
+            #endregion
+            #region Q2
+            //var re = ListGenerator.ProductList.GroupBy(p => p.Category).Where(p => p.Any(p => p.UnitsInStock == 0));
+            //foreach (var item in re)
+            //{
+            //    Console.WriteLine(item.Key);
+            //        foreach (var item2 in item)
+            //    {
+            //        Console.WriteLine(item2);
+            //    }
+            //}
+
+            #endregion
+            #region Q3
+           // var re = ListGenerator.ProductList.GroupBy(p => p.Category).Where(p => p.All(p => p.UnitsInStock > 0));
+            //foreach (var item in re)
+            //{
+            //    Console.WriteLine(item.Key);
+            //        foreach (var item2 in item)
+            //    {
+            //        Console.WriteLine(item2);
+            //    }
+            //}
+
+            #endregion
+            #endregion
             #endregion
             #endregion
         }
