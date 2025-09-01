@@ -1,5 +1,7 @@
 ﻿using Linque01.Data;
+using System.Collections;
 using System.Runtime.Intrinsics.Arm;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Linque01
@@ -8,6 +10,7 @@ namespace Linque01
     {
         static void Main(string[] args)
         {
+            #region Session 1
             #region Demo
             #region implicitly type local variable
             #region var 
@@ -462,6 +465,265 @@ namespace Linque01
 
 
             #endregion
+            #endregion
+
+            #region Session 2
+            #region Demo
+            #region Casting operators
+            //imediate excusion
+            #region get product out of stock
+            //List<Product> product = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0).ToList();
+            //foreach (Product p in product) { Console.WriteLine(p); }
+            //Product[] product = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0).ToArray();
+            //foreach (Product p in product) { Console.WriteLine(p); }
+            //Dictionary<long,Product> product = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID);
+            // foreach(var p in product) { Console.WriteLine($"Key : {p.Key}"); Console.WriteLine($"value : {p.Value}"); }
+            //Dictionary<long,string> product = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID,c=>c.ProductName);
+            // foreach(var p in product) { Console.WriteLine($"Key : {p.Key}"); Console.WriteLine($"value : {p.Value}"); }
+            //HashSet<Product> product = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0).ToHashSet();
+            //  foreach(var p in product) { Console.WriteLine(p); }
+            //oftype()
+            //ArrayList arr= new ArrayList()
+            //{
+            //    "Ahmed",
+            //    "mahmoud",
+            //    "Ali",
+            //    1,
+            //    2,
+            //    3
+
+            //};
+
+            //   var result = arr.OfType<string>();
+            //  foreach(var i in result) {Console.WriteLine(i); }
+            #endregion
+            #endregion
+            #region Generation operator
+            //defered excusion valid only fluent syntax 
+            // call static method 
+            //var res = Enumerable.Range(0, 100);
+            //res = Enumerable.Repeat(3,100);
+            //var list = Enumerable.Empty<Product>();
+            ////                 ===
+            //List<Product> products = new List<Product>();
+            //var list1 = Enumerable.Empty<int>();
+            //List<int> p = new List<int>();
+            //foreach (var x in res) {Console.Write(x);}
+
+
+            #endregion
+            #region set operation [union famly]
+            //var seq1 = Enumerable.Range(0, 100);
+            //var seq2 = Enumerable.Range(50, 100);
+            //var res = seq1.Union(seq2);
+            //foreach (var x in res)
+            //    Console.WriteLine(x);
+
+            //var res = seq1.Concat(seq2);
+            // foreach (var x in res) 
+            // Console.WriteLine(x);
+
+            //var res = seq1.Intersect(seq2);
+            //foreach (var x in res)
+            //    Console.WriteLine(x);
+
+
+            //var res = seq1.Except(seq2);
+            //foreach (var x in res)
+            //    Console.WriteLine(x);
+
+            //var res = seq1.Concat(seq2);
+            //res=res.Distinct();
+            //foreach (var x in res)
+            //    Console.WriteLine(x);
+
+            #endregion
+            #region Quantifier operators
+            //var res = ListGenerator.ProductList.Any();
+            //var res = ListGenerator.ProductList.Any(p =>p.UnitsInStock>100);
+            //var res = ListGenerator.ProductList.All (p =>p.UnitsInStock>=0);
+            //var seq1 = Enumerable.Range(0, 100);
+            //var seq2 = Enumerable.Range(50, 100);
+            //var res = seq1.SequenceEqual(seq2);
+            //Console.WriteLine(res);
+            #endregion
+            #region zipping operators
+            // string[] names = { "fady", "aymen", "hossam", "maged" };
+            // int[] num =Enumerable.Range(1,10).ToArray();
+            // char[] chars = { 'A', 'B', 'C','D' };
+            // var res =names.Zip(chars);
+            // var e=names.Zip(chars,num);
+            ///*
+            // * (fady,A)
+            // * (aymen , B)
+            // * (hossam ,C)
+            // * 
+            // * */
+            //foreach(var s in  e)
+            //     Console.WriteLine(s);
+
+            #endregion
+            #region Grouping operator
+            #region get product group by cat
+            //var res = ListGenerator.ProductList.GroupBy(p => p.Category);
+            //res = from x in ListGenerator.ProductList
+            //      group x by x.Category;
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Key);
+            //    foreach (var item2 in item)
+            //        Console.WriteLine(item2.ProductName);
+            //}
+            #endregion
+            #region get product in stock group by cat
+            //var res = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0).GroupBy(x=>x.Category);
+            //foreach (var item in res) 
+            //{
+            //Console.WriteLine(item.Key);
+            //    foreach (var item2 in item) Console.WriteLine(item2);
+            //}
+            #endregion
+            #region get product in stock groupe by cat that contain more than 10 product
+            //var res = ListGenerator.ProductList.Where(p => p.UnitsInStock > 1)
+            //    .GroupBy(x => x.Category).Where(p => p.Count() > 10);
+            //res = from p in ListGenerator.ProductList
+            //      where p.UnitsInStock>1
+            //      group p by p.Category
+            //      into cat 
+            //      where cat.Count() > 10
+            //      select cat;
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Key);
+            //    foreach (var item2 in item) Console.WriteLine(item2.ProductName);
+            //}
+            #endregion
+            #region get product in stock groupe by cat that contain more than 10 product
+            //var res = ListGenerator.ProductList.Where(p => p.UnitsInStock > 1)
+            //    .GroupBy(x => x.Category).Where(p => p.Count() > 10).Select(p => new
+            //    {
+            //        CatagoryName = p.Key,
+            //        Countofproducr = p.Count()
+            //    });
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+
+            //}
+            #endregion
+            #region Partitioning operator
+            //var res = ListGenerator.ProductList.Take(10);
+            // res = ListGenerator.ProductList.Where(p=>p.UnitsInStock>0).Take(10);
+            //foreach (var item in res) Console.WriteLine(item);
+            //****************************************************************
+            //var res = ListGenerator.ProductList.Skip(1);
+            // res = ListGenerator.ProductList.Skip(1).Skip(10);
+
+            //foreach (var item in res) Console.WriteLine(item);
+            //*****************************************
+            //var res = ListGenerator.ProductList.TakeLast(10);
+            //**************************************
+            //var res = ListGenerator.ProductList.SkipLast(10);
+            //************************************************
+            //var page1 = ListGenerator.ProductList.Take(10);
+            //var page2 = ListGenerator.ProductList.Skip(10).Take(10);
+            //var page3 = ListGenerator.ProductList.Skip(10).Skip(10).Take(10);
+            //Console.WriteLine("==========================page1=================");
+            //foreach ( var item in page1) Console.WriteLine(item);
+            //Console.WriteLine("==========================page2=================");
+            //foreach ( var item in page2) Console.WriteLine(item);
+            //Console.WriteLine("==========================page3=================");
+            ////foreach ( var item in page3) Console.WriteLine(item);
+            //int[] arr = { 8, 9, 7, 4, 5, 3, 2, 1, 6 };
+
+            //var res =arr.TakeWhile((i,v) => i < v);
+            //res=arr.SkipWhile(n=>n %3!=0);
+            //foreach(var i in res)Console.WriteLine(i);
+
+
+            #endregion
+            #region Let&&INTO
+            List<string> list = new List<string>() { "FADY", "mohamed","hossam","menna"};
+            //var res = from p in list
+            //          select Regex.Replace(p, "[aeiouAEIOU]", string.Empty)
+            //          into ewe
+            //          where ewe.Length >3
+            //          select ewe;
+            //var res = from p in list
+            //          let ewe= Regex.Replace(p, "[aeiouAEIOU]", string.Empty)
+            //          where ewe.Length >3
+            //          select ewe;
+            //foreach (string s in res) Console.WriteLine(s);
+
+            #endregion
+            #endregion
+
+            #endregion
+            #region Assignment
+            #region LINQ - Aggregate Operators
+
+
+            #region Q1
+            //var res = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0).GroupBy(p => p.Category)
+            //    .Select(p => new
+            //    {
+            //        Catagory=p.Key,
+            //        Totalunit =p.Sum(p=>p.UnitsInStock)
+
+            //    });
+            //foreach (var item in res) 
+            //    Console.WriteLine(item);
+            #endregion
+            #region Q2
+            //var res = ListGenerator.ProductList.GroupBy(p => p.Category).Select(p => new
+            //{
+            //    catagory=p.Key,
+            //    ChepestPrice=p.Min(p=>p.UnitPrice)
+            //});
+            //foreach (var item in res) Console.WriteLine(item);
+            #endregion
+            #region Q3
+            //var res = from p in ListGenerator.ProductList
+            //        group p by p.Category
+            //        into dd
+            //        let pricecheper =dd.Min(p=>p.UnitPrice)
+            //        select new
+            //        {
+            //            catagory=dd.Key,
+            //            pricechepest= dd.Where(p=>p.UnitPrice == pricecheper)
+            //        };
+            //foreach (var item in res) Console.WriteLine(item);
+            #endregion
+            #region Q4
+            //var res = ListGenerator.ProductList.GroupBy(p => p.Category).Select(p => new {
+            //catagory=p.Key,
+            //mostexpensive=p.Max(p=>p.UnitPrice)});
+            #endregion
+            #region Q5
+            //var res = from p in ListGenerator.ProductList
+            //          group p by p.Category
+            //        into dd
+            //          let priceExpensive = dd.Max(p => p.UnitPrice)
+            //          select new
+            //          {
+            //              catagory = dd.Key,
+            //              PriceExpensive = dd.Where(p => p.UnitPrice == priceExpensive)
+            //          };
+            //foreach (var item in res) Console.WriteLine(item);
+
+            #endregion
+            #region Q6
+            var averagePrice = ListGenerator.ProductList.GroupBy(p => p.Category)
+    .Select(g => new { Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) });
+            foreach (var item in averagePrice) Console.WriteLine(item);
+            #endregion
+            #endregion
+            #endregion
+            #endregion
+
         }
     }
 }
