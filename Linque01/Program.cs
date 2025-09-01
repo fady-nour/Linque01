@@ -822,7 +822,7 @@ namespace Linque01
 
             #endregion
             #region Q3
-           // var re = ListGenerator.ProductList.GroupBy(p => p.Category).Where(p => p.All(p => p.UnitsInStock > 0));
+            // var re = ListGenerator.ProductList.GroupBy(p => p.Category).Where(p => p.All(p => p.UnitsInStock > 0));
             //foreach (var item in re)
             //{
             //    Console.WriteLine(item.Key);
@@ -830,6 +830,43 @@ namespace Linque01
             //    {
             //        Console.WriteLine(item2);
             //    }
+            //}
+
+            #endregion
+            #endregion
+            #region Grouping Operators
+            #region Q1
+            //List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //var groups = numbers.GroupBy(n => n % 5);
+
+            //foreach (var g in groups)
+            //{
+            //    Console.WriteLine($"Number with Remainder {g.Key} divided by 5: \n{string.Join("\n", g)}");
+            //}
+
+            #endregion
+            #region Q2
+            //var words = File.ReadAllLines("dictionary_english.txt");
+
+            //var res= words
+            //    .GroupBy(w => w[0]);
+
+            //foreach (var g in res)
+            //{
+            //    Console.WriteLine($"{g.Key}\n: {string.Join("\n", g)}");
+            //}
+
+            #endregion
+            #region Q3
+            //string[] Arr = { "from", "salt", "earn", "last", "near", "form" };
+
+            //var res = Arr
+            //    .GroupBy(w => new string(w.OrderBy(c => c).ToArray()));
+
+            //foreach (var g in res)
+            //{
+            //    Console.WriteLine($"{string.Join("\n", g)}\n......");
             //}
 
             #endregion
