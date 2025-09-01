@@ -738,21 +738,73 @@ namespace Linque01
             //        foreach (var c in res) Console.WriteLine(c);
             #endregion
             #region Q4
-    //        var productOnlyLetters = ListGenerator.ProductList.Select(p => p.ProductName[0])
-    //.Except(ListGenerator.CustomersList.Select(c => c.CustomerName[0]));
+            //        var productOnlyLetters = ListGenerator.ProductList.Select(p => p.ProductName[0])
+            //.Except(ListGenerator.CustomersList.Select(c => c.CustomerName[0]));
             //foreach ( var item in res) Console.WriteLine(item);
             #endregion
             #region Q5
-    //        var res = ListGenerator.ProductList.Select(p => p.ProductName.Length >= 3 ?
-    //                                                      p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName)
-    //.Concat(ListGenerator.CustomersList.Select(c => c.CustomerName.Length >= 3 ?
-    //                                                c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName));
+            //        var res = ListGenerator.ProductList.Select(p => p.ProductName.Length >= 3 ?
+            //                                                      p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName)
+            //.Concat(ListGenerator.CustomersList.Select(c => c.CustomerName.Length >= 3 ?
+            //                                                c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName));
             //foreach ( var item in res) Console.WriteLine(item);
             #endregion
             #endregion
+            #region LINQ - Partitioning Operators
+            #region Q1
+            //        var res = ListGenerator.CustomersList
+            //.Where(c => c.City == "Washington")
+            //.SelectMany(c => c.Orders)
+            //.Take(3);
+            //        foreach (var item in res)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
+
+            #endregion
+            #region Q2
+            //        var ress = ListGenerator.CustomersList
+            //.Where(c => c.City == "Washington")
+            //.SelectMany(c => c.Orders)
+            //.Skip(2);
+            //        foreach (var item in ress)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
+
+            #endregion
+            #region Q3
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var result = numbers.TakeWhile((n, index) => n >= index);
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //;
+
+            #endregion
+            #region Q4
+            //        var resul = numbers
+            //.SkipWhile(n => n % 3 != 0);
+            //        foreach (var item in resul)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
+            #endregion
+            #region Q5
+            //        var resu = numbers
+            //.SkipWhile((n, index) => n >= index);
+            //        foreach (var item in resu)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
             #endregion
             #endregion
 
+            #endregion
+            #endregion
         }
     }
 }
