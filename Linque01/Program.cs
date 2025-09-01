@@ -1,5 +1,6 @@
 ﻿using Linque01.Data;
 using System.Collections;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.Arm;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -716,9 +717,37 @@ namespace Linque01
 
             #endregion
             #region Q6
-            var averagePrice = ListGenerator.ProductList.GroupBy(p => p.Category)
-    .Select(g => new { Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) });
-            foreach (var item in averagePrice) Console.WriteLine(item);
+            //        var averagePrice = ListGenerator.ProductList.GroupBy(p => p.Category)
+            //.Select(g => new { Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) });
+            //        foreach (var item in averagePrice) Console.WriteLine(item);
+            #endregion
+            #endregion
+            #region LINQ - Set Operators
+            #region Q1
+            //var res = ListGenerator.ProductList.Select(p => p.Category).Distinct();
+            //foreach (var item in res) Console.WriteLine(item);
+            #endregion
+            #region Q2
+            //var res = ListGenerator.ProductList.Select(p => p.ProductName[0])
+            //    .Union(ListGenerator.CustomersList.Select(p => p.CustomerName[0]);
+            //foreach ( var item in res) Console.WriteLine(item);
+            #endregion
+            #region Q3
+            //        var res = ListGenerator.ProductList.Select(p => p.ProductName[0])
+            //.Intersect(ListGenerator.CustomersList.Select(c => c.CustomerName[0]));
+            //        foreach (var c in res) Console.WriteLine(c);
+            #endregion
+            #region Q4
+    //        var productOnlyLetters = ListGenerator.ProductList.Select(p => p.ProductName[0])
+    //.Except(ListGenerator.CustomersList.Select(c => c.CustomerName[0]));
+            //foreach ( var item in res) Console.WriteLine(item);
+            #endregion
+            #region Q5
+    //        var res = ListGenerator.ProductList.Select(p => p.ProductName.Length >= 3 ?
+    //                                                      p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName)
+    //.Concat(ListGenerator.CustomersList.Select(c => c.CustomerName.Length >= 3 ?
+    //                                                c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName));
+            //foreach ( var item in res) Console.WriteLine(item);
             #endregion
             #endregion
             #endregion
